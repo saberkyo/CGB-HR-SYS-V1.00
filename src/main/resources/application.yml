@@ -1,0 +1,35 @@
+
+#spring jsp
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql:///hr?serverTimezone=GMT%2B8&characterEncoding=UTF8
+    username: root
+    password: root
+  thymeleaf:
+    cache: false
+    enabled: false
+ 
+#server
+server:
+  port: 80
+  servlet:
+    context-path: /
+  tomcat:
+    max-threads: 1000
+    
+#mybatis
+mybatis:
+  configuration:
+    default-statement-timeout: 30
+    map-underscore-to-camel-case: true
+  mapper-locations:
+  - classpath:/mapper/sys/*.xml
+  
+#Log
+logging:
+  level:
+       com.cy: DEBUG
